@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RAUF GLOBAL NEWS | Biblioteca Premium</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -24,354 +26,577 @@ scroll-behavior:smooth;
 body{
 font-family:'Inter',sans-serif;
 background:#050505;
-color:#ffffff;
+color:white;
 overflow-x:hidden;
-background-image:
-radial-gradient(circle at top,#171717 0%,#050505 55%);
+position:relative;
 }
+
+/* FUNDO CINEMATOGRÁFICO */
 
 body::before{
 content:'';
 position:fixed;
-width:100%;
-height:100%;
 top:0;
 left:0;
+width:100%;
+height:100%;
 background:
-linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.94)),
-url('1.png');
+linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.95)),
+url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1920&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
-opacity:0.32;
-z-index:-1;
+opacity:1;
+z-index:-3;
 }
+
+body::after{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top right, rgba(255,0,0,0.18), transparent 30%),
+radial-gradient(circle at left, rgba(255,140,0,0.12), transparent 25%),
+radial-gradient(circle at bottom, rgba(255,255,255,0.04), transparent 30%);
+z-index:-2;
+}
+
+/* CONTAINER */
 
 .container{
 width:100%;
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 padding:40px 20px 100px;
 }
 
+/* HERO */
+
 .hero{
 text-align:center;
-padding:80px 20px;
+padding-top:40px;
+padding-bottom:60px;
 }
 
 .logo{
-font-size:18px;
-font-weight:900;
-letter-spacing:6px;
-color:#d4af37;
-margin-bottom:25px;
+width:260px;
+max-width:85%;
+margin:auto;
+display:block;
+filter:drop-shadow(0 0 25px rgba(255,120,0,0.45));
+animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
 }
 
 .badge{
 display:inline-block;
-padding:12px 24px;
-border:1px solid rgba(212,175,55,0.4);
+margin-top:30px;
+padding:14px 28px;
+border:1px solid rgba(255,180,0,0.4);
 border-radius:999px;
-background:rgba(212,175,55,0.08);
+background:rgba(255,180,0,0.08);
+color:#ffcc66;
 font-size:14px;
-font-weight:700;
-color:#d4af37;
-margin-bottom:30px;
+font-weight:800;
+letter-spacing:1px;
 }
 
 .hero h1{
 font-size:72px;
 line-height:1.05;
+margin-top:35px;
 font-weight:900;
-margin-bottom:30px;
+text-transform:uppercase;
 }
 
 .hero h1 span{
-color:#d4af37;
+color:#ffb400;
 }
 
 .hero p{
-max-width:900px;
-margin:auto;
-font-size:22px;
+max-width:980px;
+margin:30px auto 0;
+font-size:23px;
 line-height:1.9;
-color:#e0e0e0;
+color:#dddddd;
 }
+
+/* INFO BAR */
+
+.info-bar{
+margin-top:55px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.info-item{
+background:rgba(10,10,10,0.88);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:18px;
+padding:22px;
+font-size:16px;
+font-weight:700;
+line-height:1.6;
+backdrop-filter:blur(10px);
+}
+
+/* TITULO */
+
+.section-title{
+text-align:center;
+margin-top:80px;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:52px;
+font-weight:900;
+text-transform:uppercase;
+}
+
+.section-title p{
+font-size:22px;
+margin-top:15px;
+color:#ffb400;
+}
+
+/* CARDS */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-margin-top:80px;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:35px;
 }
 
 .card{
 position:relative;
-background:rgba(12,12,12,0.92);
+background:rgba(8,8,8,0.92);
 border:1px solid rgba(255,255,255,0.08);
-border-radius:30px;
-padding:35px;
-backdrop-filter:blur(8px);
+border-radius:28px;
 overflow:hidden;
+backdrop-filter:blur(10px);
 transition:0.4s;
-box-shadow:0 0 30px rgba(0,0,0,0.4);
+box-shadow:0 0 40px rgba(0,0,0,0.45);
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px rgba(212,175,55,0.18);
-border-color:rgba(212,175,55,0.4);
+transform:translateY(-12px);
+box-shadow:0 0 45px rgba(255,170,0,0.22);
+border-color:rgba(255,180,0,0.4);
 }
 
-.card::before{
-content:'';
+.card-top{
+padding:35px 30px 10px;
+}
+
+.card-number{
 position:absolute;
-width:180px;
-height:180px;
-background:radial-gradient(circle,#d4af37 0%,transparent 70%);
-opacity:0.08;
-top:-60px;
-right:-60px;
-}
-
-.tag{
-display:inline-block;
-padding:10px 18px;
-border-radius:999px;
-background:rgba(0,255,136,0.1);
-color:#00ff88;
-font-size:13px;
-font-weight:800;
-margin-bottom:25px;
-}
-
-.card h2{
-font-size:34px;
-line-height:1.15;
-margin-bottom:25px;
+top:20px;
+left:20px;
+width:55px;
+height:55px;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
 font-weight:900;
+background:linear-gradient(135deg,#ff0000,#ff6600);
+}
+
+.card:nth-child(2) .card-number{
+background:linear-gradient(135deg,#ffb400,#ff8800);
+}
+
+.card:nth-child(3) .card-number{
+background:linear-gradient(135deg,#0066ff,#00aaff);
+}
+
+.book{
+width:220px;
+margin:auto;
+display:block;
+filter:drop-shadow(0 0 25px rgba(255,120,0,0.35));
+}
+
+.card-content{
+padding:0 30px 35px;
+}
+
+.card h3{
+font-size:34px;
+line-height:1.2;
+margin-top:25px;
+margin-bottom:20px;
+font-weight:900;
+text-transform:uppercase;
+}
+
+.card h3 span{
+color:#ffb400;
 }
 
 .card p{
 font-size:17px;
 line-height:1.9;
 color:#d7d7d7;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .features{
-margin:25px 0;
+margin-bottom:25px;
 }
 
 .features li{
 list-style:none;
-font-size:16px;
-line-height:1.8;
 margin-bottom:12px;
-color:#ffffff;
+font-size:16px;
+line-height:1.7;
+}
+
+.price-box{
+margin-top:20px;
+text-align:center;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.old-price{
+font-size:20px;
+text-decoration:line-through;
+opacity:0.45;
+margin-bottom:8px;
+}
+
+.price{
+font-size:62px;
+font-weight:900;
+color:#00ff88;
+line-height:1;
+}
+
+.price small{
+font-size:24px;
 }
 
 .button{
 display:block;
-width:100%;
-text-align:center;
+margin-top:28px;
 padding:22px;
-margin-top:30px;
-background:linear-gradient(90deg,#00c853,#00ff88);
-color:#000;
-font-size:20px;
-font-weight:900;
+text-align:center;
 text-decoration:none;
+font-size:22px;
+font-weight:900;
 border-radius:18px;
 transition:0.3s;
-box-shadow:0 0 25px rgba(0,255,136,0.3);
+color:black;
+background:linear-gradient(90deg,#ffb400,#ffd84d);
+box-shadow:0 0 30px rgba(255,180,0,0.3);
 }
 
 .button:hover{
 transform:scale(1.03);
 }
 
-.highlight-button{
-background:linear-gradient(90deg,#d4af37,#f7d46b);
-box-shadow:0 0 25px rgba(212,175,55,0.35);
-}
-
 .footer{
 margin-top:100px;
 text-align:center;
-padding:50px 20px;
+padding-top:60px;
 border-top:1px solid rgba(255,255,255,0.08);
 }
 
 .footer h3{
-font-size:34px;
+font-size:40px;
+font-weight:900;
 margin-bottom:20px;
-color:#d4af37;
+color:#ffb400;
 }
 
 .footer p{
-font-size:20px;
+font-size:21px;
 line-height:1.8;
-max-width:800px;
-margin:auto;
 color:#d0d0d0;
+max-width:900px;
+margin:auto;
 }
 
 .quote{
-margin-top:40px;
-font-size:28px;
+margin-top:45px;
+font-size:30px;
 font-weight:900;
-color:#d4af37;
+color:#ffb400;
+line-height:1.6;
 }
+
+.copy{
+margin-top:25px;
+font-size:15px;
+opacity:0.7;
+}
+
+/* RESPONSIVO */
 
 @media(max-width:768px){
 
-.hero{
-padding:40px 10px;
-}
-
 .hero h1{
-font-size:46px;
+font-size:44px;
 }
 
 .hero p{
 font-size:18px;
 }
 
-.card{
-padding:28px;
+.section-title h2{
+font-size:36px;
 }
 
-.card h2{
+.section-title p{
+font-size:18px;
+}
+
+.card h3{
 font-size:28px;
 }
 
-.footer h3{
-font-size:28px;
-}
-
-.footer p{
-font-size:17px;
+.price{
+font-size:52px;
 }
 
 .quote{
 font-size:22px;
 }
 
+.footer p{
+font-size:17px;
+}
+
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
 <section class="hero">
 
-<div class="logo">RAUF GLOBAL NEWS</div>
+<img src="logo.png" alt="RAUF GLOBAL NEWS" class="logo">
 
 <div class="badge">
-🌍 BIBLIOTECA PREMIUM • CONTEÚDOS EXCLUSIVOS 2026
+🌍 CONHECIMENTO • ANÁLISE • ESTRATÉGIA • VERDADE
 </div>
 
 <h1>
-CONHECIMENTO É <span>PODER</span><br>
-EM UM MUNDO EM ALERTA
+INFORMAÇÃO É PODER.<br>
+<span>QUEM ENTENDE O MUNDO, LIDERA O FUTURO.</span>
 </h1>
 
 <p>
-Descubra materiais exclusivos sobre geopolítica global, história da Paraíba e turismo histórico em uma plataforma criada para leitores que desejam enxergar além da superfície.
-Conteúdos estratégicos, históricos e culturais desenvolvidos por Rauf Costa.
+Conteúdo exclusivo, análises profundas e conhecimento estratégico para quem não se contenta com a superfície das notícias.
+Acesse materiais premium sobre geopolítica global, história da Paraíba e turismo histórico.
+</p>
+
+<div class="info-bar">
+
+<div class="info-item">
+📚 CONTEÚDO EXCLUSIVO E ATUALIZADO
+</div>
+
+<div class="info-item">
+🌍 FONTES CONFIÁVEIS E VERIFICADAS
+</div>
+
+<div class="info-item">
+🔒 COMPRA 100% SEGURA VIA HOTMART
+</div>
+
+<div class="info-item">
+⚡ ACESSO IMEDIATO APÓS A COMPRA
+</div>
+
+</div>
+
+</section>
+
+<section class="section-title">
+
+<h2>
+ESCOLHA SEU CONHECIMENTO
+</h2>
+
+<p>
+PRODUTOS EXCLUSIVOS RAUF GLOBAL NEWS
 </p>
 
 </section>
 
 <section class="grid">
 
+<!-- CARD 1 -->
+
 <div class="card">
 
-<div class="tag">🔥 MAIS VENDIDO</div>
+<div class="card-number">01</div>
 
-<h2>🌍 Geopolítica Global em Alerta 2026</h2>
+<div class="card-top">
+
+<img class="book" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop" alt="Geopolítica">
+
+</div>
+
+<div class="card-content">
+
+<h3>
+RAUF GLOBAL NEWS<br>
+<span>GEOPOLÍTICA GLOBAL EM ALERTA 2026</span>
+</h3>
 
 <p>
-Um relatório estratégico premium sobre os bastidores da nova ordem mundial. Descubra como EUA, China, BRICS+, inteligência artificial, guerras econômicas e conflitos globais estão redefinindo o futuro do planeta.
+Um relatório estratégico premium sobre os conflitos globais, economia, poder e os cenários que vão moldar o mundo até 2030.
 </p>
 
 <ul class="features">
-<li>✔️ EUA x China e disputa pela hegemonia</li>
-<li>✔️ BRICS+, dólar e nova economia global</li>
-<li>✔️ Inteligência Artificial e guerra tecnológica</li>
-<li>✔️ Cenários geopolíticos até 2030</li>
-<li>✔️ Tensões militares e riscos globais</li>
-<li>✔️ Conteúdo atualizado para 2026</li>
+
+<li>✔ EUA x China e disputa global</li>
+<li>✔ BRICS+ e economia mundial</li>
+<li>✔ Inteligência Artificial e guerra tecnológica</li>
+<li>✔ Crises, conflitos e ameaças globais</li>
+<li>✔ Estratégias geopolíticas até 2030</li>
+
 </ul>
 
-<p>
-Ideal para leitores que acompanham política internacional, economia global, geopolítica e tendências estratégicas mundiais.
-</p>
+<div class="price-box">
 
-<a href="https://pay.hotmart.com/Y105888372B" target="_blank" class="button highlight-button">
-🚀 GARANTIR ACESSO AGORA
+<div class="old-price">
+DE R$97,00
+</div>
+
+<div class="price">
+R$19<small>,90</small>
+</div>
+
+<a href="https://pay.hotmart.com/Y105888372B" target="_blank" class="button">
+🚀 QUERO ESTE E-BOOK
 </a>
 
 </div>
 
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
 <div class="card">
 
-<div class="tag">📚 HISTÓRIA EXCLUSIVA</div>
+<div class="card-number">02</div>
 
-<h2>⚔️ As Guerras da Paraíba</h2>
+<div class="card-top">
+
+<img class="book" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=600&auto=format&fit=crop" alt="História">
+
+</div>
+
+<div class="card-content">
+
+<h3>
+AS GUERRAS DA PARAÍBA<br>
+<span>SANGUE, FÉ E FUNDAÇÃO</span>
+</h3>
 
 <p>
-Uma obra histórica intensa e baseada em documentos coloniais originais do século XVI. Reviva os conflitos que moldaram a fundação da Capitania da Paraíba entre 1585 e 1587.
+A saga real da conquista da Paraíba entre 1585 e 1587 baseada em documentos históricos originais do século XVI.
 </p>
 
 <ul class="features">
-<li>✔️ Batalhas contra franceses e Potiguaras</li>
-<li>✔️ Fundação dos primeiros fortes coloniais</li>
-<li>✔️ História da formação da Paraíba</li>
-<li>✔️ Fontes históricas originais atualizadas</li>
-<li>✔️ Linguagem acessível e moderna</li>
-<li>✔️ Ideal para estudantes e pesquisadores</li>
+
+<li>✔ Batalhas contra Potiguaras e franceses</li>
+<li>✔ Construção dos primeiros fortes</li>
+<li>✔ História colonial da Paraíba</li>
+<li>✔ Fontes históricas atualizadas</li>
+<li>✔ Ideal para estudantes e pesquisadores</li>
+
 </ul>
 
-<p>
-Um material raro e estratégico para apaixonados por História do Brasil, cultura nordestina e memória colonial.
-</p>
+<div class="price-box">
+
+<div class="old-price">
+DE R$77,00
+</div>
+
+<div class="price">
+R$19<small>,90</small>
+</div>
 
 <a href="https://pay.hotmart.com/N104148581D" target="_blank" class="button">
-📖 QUERO MEU EXEMPLAR
+📖 QUERO ESTE E-BOOK
 </a>
 
 </div>
 
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
 <div class="card">
 
-<div class="tag">🏛️ TURISMO & CULTURA</div>
+<div class="card-number">03</div>
 
-<h2>📍 Guia Completo do Centro Histórico de João Pessoa</h2>
+<div class="card-top">
+
+<img class="book" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=600&auto=format&fit=crop" alt="João Pessoa">
+
+</div>
+
+<div class="card-content">
+
+<h3>
+GUIA COMPLETO DO<br>
+<span>CENTRO HISTÓRICO DE JOÃO PESSOA</span>
+</h3>
 
 <p>
-Explore os monumentos, igrejas, praças e edifícios históricos da terceira cidade mais antiga do Brasil através de um guia detalhado, ilustrado e pronto para estudos ou roteiros turísticos.
+Apostila digital completa com mais de 50 pontos históricos, perfeita para guias, estudantes e amantes da cultura brasileira.
 </p>
 
 <ul class="features">
-<li>✔️ Mais de 50 pontos históricos</li>
-<li>✔️ Conteúdo didático e ilustrado</li>
-<li>✔️ Ideal para turismo e educação</li>
-<li>✔️ História, arquitetura e cultura</li>
-<li>✔️ Material em PDF com acesso imediato</li>
-<li>✔️ Excelente para apresentações e roteiros</li>
+
+<li>✔ Mais de 50 pontos históricos</li>
+<li>✔ Contexto histórico e cultural</li>
+<li>✔ Ideal para roteiros e aulas</li>
+<li>✔ Organização didática visual</li>
+<li>✔ Acesso imediato em PDF</li>
+
 </ul>
 
-<p>
-Perfeito para guias de turismo, professores, estudantes e apaixonados pela história cultural brasileira.
-</p>
+<div class="price-box">
+
+<div class="old-price">
+DE R$47,00
+</div>
+
+<div class="price">
+R$19<small>,90</small>
+</div>
 
 <a href="https://pay.hotmart.com/C101233932G" target="_blank" class="button">
-🏛️ ACESSAR GUIA COMPLETO
+🏛 QUERO ESTE E-BOOK
 </a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -389,6 +614,10 @@ Conteúdos estratégicos, históricos e culturais produzidos para leitores que d
 
 <div class="quote">
 ☕ “Vai tomar teu café… porque o mundo continua em alerta.”
+</div>
+
+<div class="copy">
+RAUF GLOBAL NEWS © 2026 • TODOS OS DIREITOS RESERVADOS
 </div>
 
 </footer>
